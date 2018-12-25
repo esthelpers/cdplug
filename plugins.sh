@@ -17,7 +17,7 @@ virtualenv(){
 makedirectory(){
     if ! [[ -d $CHAIN_ORIGINAL_PARAMETERS ]]
     then
-        echo -n "this folder doesn't exist, do you want to create?[y/N]"
+        echo -n "this folder doesn't exist, do you want to create?[y/N]: "
         read answer
         case "$answer" in
             y)
@@ -31,5 +31,4 @@ makedirectory(){
         esac
     fi
     CHAIN_NEXT
-
 }
