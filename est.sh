@@ -1,4 +1,4 @@
-est activate chain
+est silent activate chain
 
 source $esthelpers_cdplug/plugins.sh
 
