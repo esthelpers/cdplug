@@ -1,3 +1,5 @@
+est activate chain
+
 source $esthelpers_cdplug/plugins.sh
 
 chain flush
