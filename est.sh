@@ -10,5 +10,5 @@ chain plug makedirectory
 
 chain save cdplug
 cd(){
-    chain exec cdplug
+    chain exec cdplug $@
 }
