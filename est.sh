@@ -2,13 +2,13 @@ est silent activate chain
 
 source $esthelpers_cdplug/plugins.sh
 
-chain flush
+chain cdplug:flush
 
-chain plug cdplug_builtincd
-chain plug cdplug_virtualenv
-chain plug cdplug_makedirectory
+chain cdplug:plug cdplug_builtincd
+chain cdplug:plug cdplug_virtualenv
+chain cdplug:plug cdplug_makedirectory
 
-chain save cdplug
+chain cdplug:save 
 cd(){
-    chain exec cdplug $@
+    chain cdplug:exec $@
 }
