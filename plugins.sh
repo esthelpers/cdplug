@@ -1,7 +1,7 @@
 builtincd(){
     builtin cd $CHAIN_ORIGINAL_PARAMETERS
 }
-virtualenv(){
+cdplug_virtualenv(){
     CHAIN_NEXT
     if [[ -z "$VIRTUAL_ENV" ]] ; then
         if [[ -d ./.env ]] ; then
