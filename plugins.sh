@@ -1,4 +1,4 @@
-builtincd(){
+cdplug_builtincd(){
     builtin cd $CHAIN_ORIGINAL_PARAMETERS
 }
 cdplug_virtualenv(){
@@ -14,7 +14,7 @@ cdplug_virtualenv(){
         fi
     fi
 }
-makedirectory(){
+cdplug_makedirectory(){
     if ! [[ -d $CHAIN_ORIGINAL_PARAMETERS ]]
     then
         echo -n "this folder doesn't exist, do you want to create?[y/N]: "
