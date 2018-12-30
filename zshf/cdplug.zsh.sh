@@ -1,4 +1,4 @@
-fpath=($local_cdplug/zshf $fpath)
+fpath=($esthelpers_cdplug/zshf $fpath)
 autoload -U compinit
 compinit
 #zstyle ':completion:*' menu select=2
