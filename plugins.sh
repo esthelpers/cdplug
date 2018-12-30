@@ -32,6 +32,8 @@ cdplug_makedirectory(){
 
                 ;;
         esac
+    else
+        CHAIN_NEXT
     fi
 }
 cdplug_trigger(){
