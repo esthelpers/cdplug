@@ -9,7 +9,7 @@ _cd(){
 
     for vp in $EST_CDPLUG_VIRTUAL_PATH;do
         A=($(get_names $vp))
-        compadd -J $vp -X $vp -x $(echo -e "\e[35m"$vp"\e[0m") -a A
+        compadd -J $vp -X $vp -x $(echo -e "\e[35m"$(basename $vp)"\e[0m") -a A
     done
 }
 _cd "$@"
