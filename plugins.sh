@@ -15,7 +15,7 @@ cdplug_virtualenv(){
     fi
 }
 cdplug_makedirectory(){
-    if ! [[ -d $CHAIN_ORIGINAL_PARAMETERS ]] && [[ $CHAIN_ORIGINAL_PARAMETERS != '~' ]]
+    if ( ! [[ -d $CHAIN_ORIGINAL_PARAMETERS ]] ) && ( [[ $CHAIN_ORIGINAL_PARAMETERS != '~' ]] && [[ $CHAIN_ORIGINAL_PARAMETERS != '' ]] )
     then
         echo -n "this folder doesn't exist, do you want to create?[y/N]: "
         read answer
