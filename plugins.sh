@@ -22,13 +22,30 @@ cdplug_makedirectory(){
         case "$answer" in
             y)
                 mkdir -p $CHAIN_ORIGINAL_PARAMETERS
+                CHAIN_NEXT
                 ;;
             yes)
                 mkdir -p $CHAIN_ORIGINAL_PARAMETERS
+                CHAIN_NEXT
                 ;;
             *)
+
                 ;;
         esac
     fi
-    CHAIN_NEXT
+}
+cdplug_trigger(){
+CHAIN_NEXT
+if [[ $(ls -al | wc -l) == 3 ]];then
+    echo "looks like this folder is empty do you want to trigger a script\n(your scripts under the $HOME/.triggerscripts)"
+    if ! [[ -d $HOME/.triggerscripts ]];
+    then
+        mkdir $HOME/.triggerscripts
+    fi
+    let i=1
+    for s in $(ls $HOME/.triggerscripts);do
+        echo $i': '$s;
+    done
+
+fi
 }
