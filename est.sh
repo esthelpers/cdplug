@@ -1,6 +1,6 @@
 est silent activate chain
 est silent activate wai
-source $local_cdplug/plugins.sh
+source $esthelpers_cdplug/plugins.sh
 wai_source $esthelpers_cdplug/zshf/cdplug.zsh.sh
 export _CDPLUG_VIRTUAL_PATH=""
 
