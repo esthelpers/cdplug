@@ -43,7 +43,7 @@ est_cdplug_virtualpath(){
     else
         for virtual_path in $EST_CDPLUG_VIRTUAL_PATH;do
             for f in $(ls -d $virtual_path/*/);do
-                if [[ $CHAIN_ORIGINAL_PARAMETERS == $(basename $f) ]];then
+                if [[ $(basename $CHAIN_ORIGINAL_PARAMETERS) == $(basename $f) ]];then
                     CHAIN_ORIGINAL_PARAMETERS=$virtual_path/$f
                     echo -e "\e[35m"$virtual_path"\e[0m"
                     br=1
