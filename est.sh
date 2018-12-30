@@ -1,14 +1,17 @@
 est silent activate chain
-
-source $esthelpers_cdplug/plugins.sh
+est silent activate wai
+source $local_cdplug/plugins.sh
+wai_source $local_cdplug/zshf/cdplug.zsh.sh
+export _CDPLUG_VIRTUAL_PATH=""
 
 chain cdplug:flush
 
-chain cdplug:plug cdplug_builtincd
-chain cdplug:plug cdplug_virtualenv
-chain cdplug:plug cdplug_makedirectory
+chain cdplug:plug est_cdplug_builtincd
+chain cdplug:plug est_cdplug_virtualenv
+chain cdplug:plug est_cdplug_makedirectory
+chain cdplug:plug est_cdplug_virtualpath
 
-chain cdplug:save 
 cd(){
     chain cdplug:exec $@
 }
+

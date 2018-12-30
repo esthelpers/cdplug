@@ -1,7 +1,7 @@
-cdplug_builtincd(){
+est_cdplug_builtincd(){
     builtin cd $CHAIN_ORIGINAL_PARAMETERS
 }
-cdplug_virtualenv(){
+est_cdplug_virtualenv(){
     CHAIN_NEXT
     if [[ -z "$VIRTUAL_ENV" ]] ; then
         if [[ -d ./.env ]] ; then
@@ -14,7 +14,7 @@ cdplug_virtualenv(){
         fi
     fi
 }
-cdplug_makedirectory(){
+est_cdplug_makedirectory(){
     if ( ! [[ -d $CHAIN_ORIGINAL_PARAMETERS ]] ) && ( [[ $CHAIN_ORIGINAL_PARAMETERS != '~' ]] && [[ $CHAIN_ORIGINAL_PARAMETERS != '' ]] )
     then
         echo -n "this folder doesn't exist, do you want to create?[y/N]: "
@@ -36,18 +36,43 @@ cdplug_makedirectory(){
         CHAIN_NEXT
     fi
 }
-cdplug_trigger(){
-CHAIN_NEXT
-if [[ $(ls -al | wc -l) == 3 ]];then
-    echo "looks like this folder is empty do you want to trigger a script\n(your scripts under the $HOME/.triggerscripts)"
-    if ! [[ -d $HOME/.triggerscripts ]];
-    then
-        mkdir $HOME/.triggerscripts
-    fi
-    let i=1
-    for s in $(ls $HOME/.triggerscripts);do
-        echo $i': '$s;
-    done
 
-fi
+est_cdplug_virtualpath(){
+    if [[ -e $CHAIN_ORIGINAL_PARAMETERS ]];then
+        CHAIN_NEXT
+    else
+        for virtual_path in $EST_CDPLUG_VIRTUAL_PATH;do
+            for f in $(ls $virtual_path);do
+                if [[ $CHAIN_ORIGINAL_PARAMETERS == $f ]];then
+                    CHAIN_ORIGINAL_PARAMETERS=$virtual_path/$f
+                    echo -e "\e[35m"$virtual_path"\e[0m"
+                    br=1
+                    break
+                fi
+            done
+            if [[ br == 1 ]];then
+                break
+            fi
+        done
+        CHAIN_NEXT
+    fi
 }
+
+
+
+#
+#cdplug_trigger(){
+#CHAIN_NEXT
+#if [[ $(ls -al | wc -l) == 3 ]];then
+#    echo "looks like this folder is empty do you want to trigger a script\n(your scripts under the $HOME/.triggerscripts)"
+#    if ! [[ -d $HOME/.triggerscripts ]];
+#    then
+#        mkdir $HOME/.triggerscripts
+#    fi
+#    let i=1
+#    for s in $(ls $HOME/.triggerscripts);do
+#        echo $i': '$s;
+#    done
+#
+#fi
+#}
