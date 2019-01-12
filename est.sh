@@ -10,6 +10,7 @@ chain cdplug:plug est_cdplug_builtincd
 chain cdplug:plug est_cdplug_virtualenv
 chain cdplug:plug est_cdplug_makedirectory
 chain cdplug:plug est_cdplug_virtualpath
+chain cdplug:plug est_cdplug_entrance
 
 cd(){
     chain cdplug:exec $@
