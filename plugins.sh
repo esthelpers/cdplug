@@ -61,7 +61,7 @@ est_cdplug_virtualpath(){
 est_cdplug_entrance(){
     if [[ -z $CHAIN_ORIGINAL_PARAMETERS ]];then
         if [[ -z $CDPLUG_CD_HOME ]];then
-            export CHAIN_ORIGINAL_PARAMETERS="~"
+            export CHAIN_ORIGINAL_PARAMETERS=("~")
         else
             export CHAIN_ORIGINAL_PARAMETERS=$CDPLUG_CD_HOME
         fi
