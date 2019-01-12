@@ -63,7 +63,7 @@ est_cdplug_entrance(){
         if [[ -z $CDPLUG_CD_HOME ]];then
             export CHAIN_ORIGINAL_PARAMETERS=(~)
         else
-            export CHAIN_ORIGINAL_PARAMETERS=$CDPLUG_CD_HOME
+            export CHAIN_ORIGINAL_PARAMETERS=($CDPLUG_CD_HOME)
         fi
     fi
     CHAIN_NEXT
