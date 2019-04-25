@@ -4,8 +4,8 @@ est_cdplug_builtincd(){
 est_cdplug_virtualenv(){
     CHAIN_NEXT
     if [[ -z "$VIRTUAL_ENV" ]] ; then
-        if [[ -d ./.env ]] ; then
-            source ./.env/bin/activate
+        if [[ -d ./env ]] ; then
+            source ./env/bin/activate
         fi
     else
         parentdir="$(dirname "$VIRTUAL_ENV")"
