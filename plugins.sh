@@ -12,6 +12,9 @@ est_cdplug_virtualenv(){
         if [[ "$PWD"/ != "$parentdir"/* ]] ; then
             deactivate
         fi
+        if [[ -d ./env ]] ; then
+            source ./env/bin/activate
+        fi
     fi
 }
 est_cdplug_makedirectory(){
