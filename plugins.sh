@@ -53,7 +53,7 @@ est_cdplug_virtualpath(){
                     break
                 fi
             done
-            if [[ br == 1 ]];then
+            if [[ $br == 1 ]];then
                 break
             fi
         done
